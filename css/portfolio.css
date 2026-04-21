@@ -207,12 +207,18 @@ footer {
 
 /* Listas con viñetas personalizadas */
 .compartment ul {
-  list-style-type: none;
+  list-style: none; /* elimina viñetas por defecto */
   padding-left: 20px;
   font-size: 16px;
 }
+.compartment ul li {
+  position: relative;
+  padding-left: 24px; /* espacio para la viñeta */
+}
 .compartment ul li::before {
-  content: "✦ ";
+  content: "✦";
+  position: absolute;
+  left: 0;
   color: #66ffff;
   font-weight: bold;
   font-size: 18px;
