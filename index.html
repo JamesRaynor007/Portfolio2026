@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio de Alejandro</title>
+  <link rel="stylesheet" href="css/portfolio.css" />
+  <style>
+    .compartment {
+      position: relative;
+      padding: 20px;
+      border: 2px solid #333;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .compartment::before,
+    .compartment::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: linear-gradient(270deg, #00f, #0ff, #00f);
+      background-size: 600% 600%;
+      animation: flowLine 5s linear infinite;
+    }
+
+    .compartment::before { top: 0; left: 0; }
+    .compartment::after { bottom: 0; left: 0; }
+
+    @keyframes flowLine {
+      0% { background-position: 0 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .box {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .box.visible { opacity: 1; transform: translateY(0); }
+
+    .project-card {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .project-card.visible { opacity: 1; transform: scale(1); }
+
+    .compartment img {
+      max-width: 10em;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #66ffff;
+    }
+
+    .compartment ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .compartment { flex-direction: column; align-items: center; }
+      .compartment img { max-width: 80%; margin: 10px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <h1>Portfolio de Alejandro</h1>
+  <p>Analista financiero y desarrollador de herramientas de datos</p>
+  <p><a href="portfolio_en.html" class="english-link"><small>English Version</small></a></p>
+</header>
+
+
+  <!-- Sección Acerca de mí -->
+  <section class="box celeste fade">
+    <h2>Acerca de mí</h2>
+    <div class="compartment intro">
+      <img src="images/01.png" alt="Imagen acerca de mí izquierda" />
+      <ul>
+        <li>31 años, argentino, escorpiano, soltero sin hijos.</li>
+        <li>Contador y analista de datos, apasionado por los números.</li>
+        <li>Metódico, orientado a resultados, multitasking y gran capacidad de concentración.</li>
+        <li>Cocinero, jugador de tenis, gamer.</li>
+        <li>Experiencia en gestión de bases de datos y reportes financieros.</li>
+        <li>Autodidacta, motivado, viajero y aventurero.</li>
+      </ul>
+      <img src="images/02.png" alt="Imagen acerca de mí derecha" />
+    </div>
+  </section>
+
+  <!-- Sección Experiencias -->
+  <section class="box verde slide-left">
+    <h2>Experiencia Profesional</h2>
+    <div class="compartment exp">
+      <img src="images/03.png" alt="Imagen experiencia izquierda" />
+      <ul>
+        <li>Más de 4 años en puestos administrativos, contables y financieros.</li>
+        <li>Gestión de información en sistemas contables, ERP y CRM.</li>
+        <li>Análisis de Estados Financieros y colaboración en liquidaciones impositivas.</li>
+        <li>Elaboración de reportes gerenciales y asistencia en auditorías.</li>
+        <li>Desarrollo de automatizaciones para optimizar procesos.</li>
+        <li>Experiencia en grandes volúmenes de datos, asegurando exactitud y limpieza.</li>
+      </ul>
+      <img src="images/04.png" alt="Imagen experiencia derecha" />
+    </div>
+  </section>
+
+  <!-- Sección Educación -->
+  <section class="box celeste slide-right">
+    <h2>Formación Académica</h2>
+    <div class="compartment edu">
+      <img src="images/05.png" alt="Imagen educación izquierda" />
+      <ul>
+        <li>Universidad Nacional de Mar del Plata (10 años) – Gestión financiera y proceso contable.</li>
+        <li>Conocimientos en aspectos impositivos, auditoría y controles.</li>
+        <li>Cursos de inversión en bolsa, dashboards y gestión por indicadores.</li>
+        <li>Certificación en Ciencia de Datos por Soy Henry.</li>
+        <li>Competencias en Big Data, Python, SQL y Power BI.</li>
+      </ul>
+      <img src="images/06.png" alt="Imagen educación derecha" />
+    </div>
+  </section>
+
+  <!-- Sección Intereses -->
+  <section class="box verde zoom">
+    <h2>Intereses y Hobbies</h2>
+    <div class="compartment intereses">
+      <img src="images/07.png" alt="Imagen intereses izquierda" />
+      <ul>
+        <li>Trabajar en un entorno profesional que aporte valor y aprendizaje.</li>
+        <li>Capacitarme en finanzas para un nivel estratégico-gerencial.</li>
+        <li>Alcanzar nivel C1 avanzado/bilingüe en inglés.</li>
+        <li>Competir en automovilismo y practicar tenis.</li>
+        <li>Realizar yoga, cocinar y leer en tiempos libres.</li>
+      </ul>
+      <img src="images/08.png" alt="Imagen intereses derecha" />
+    </div>
+  </section>
+
+  <!-- Sección Proyectos -->
+  <section class="box celeste fade">
+    <h2>Proyectos</h2>
+    <div class="mosaic">
+      <div class="project-card">
+        <img src="images/09.png" alt="Proyecto 1" />
+        <a href="https://github.com/JamesRaynor007/CanIndustryAnalysis" class="btn">Dashboard en Power BI</a>
+      </div>
+      <div class="project-card">
+        <img src="images/10.png" alt="Proyecto 2" />
+        <a href="https://github.com/JamesRaynor007/AccountingV002" class="btn">Software de Gestión</a>
+      </div>
+      <div class="project-card">
+        <img src="images/11.png" alt="Proyecto 3" />
+        <a href="https://github.com/JamesRaynor007/HenryLab02DSPT-12ACC" class="btn">Análisis de Sector</a>
+      </div>
+      <div class="project-card">
+        <img src="images/12.png" alt="Proyecto 4" />
+        <a href="https://github.com/JamesRaynor007/SoftwareContableV001" class="btn">Software de Control</a>
+      </div>
+    </div>
+  </section>
+
+    <div class="social">
+    <p>Contacto:</p>
+    <a href="https://www.linkedin.com/in/alejandro-cesar-castellano/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/JamesRaynor007" target="_blank">GitHub</a>
+    <a href="mailto:ContadorCastellano@gmail.com" target="_blank">GMail</a>
+    <a href="https://wa.me/5492262514630" target="_blank">WhatsApp</a>
+  </div>
+
+<div class="fixed-buttons">
+  <!-- Botón CV -->
+  <a href="https://drive.google.com/file/d/1ecYxUwfDQsKqYPSZb5b1hCEbwpxqTCxv/view?usp=sharing" download title="CV">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm8 1.5V8h4.5L14 3.5zM8 12h8v2H8v-2zm0 4h8v2H8v-2z"/>
+    </svg>
+    <span class="btn-text">CV</span>
+  </a>
+
+  <!-- Botón Video -->
+  <a href="https://drive.google.com/file/d/1rkiLyn4MwoM0t465D33j_zqRqFlFRrZA/view?usp=sharing" target="_blank" title="Video">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M10 16.5v-9l6 4.5-6 4.5zM21 3H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/>
+    </svg>
+    <span class="btn-text">Video</span>
+  </a>
+
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/5492262514630" target="_blank" title="WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 2a10 10 0 0 0-8.66 15.52L2 22l4.66-1.34A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-6.83-12.57A8 8 0 1 1 12 20zm-1.25-5.75c.25.5.5.75.75 1s1.5.75 2 .75.75-.25 1-.5.5-.5.75-.75c.25-.25.25-.5 0-.75s-1.5-.75-2-.75-.75.25-1 .5-.5.5-.75.75c-.25.25-.25.5 0 .75z"/>
+    </svg>
+    <span class="btn-text">WhatsApp</span>
+  </a>
+</div>
+
+
+
+
+  <footer>
+    <p>© 2026 Alejandro Castellano - Portfolio</p>
+  </footer>
+
+  <script>
+    function showOnScroll() {
+      const boxes = document.querySelectorAll(".box");
+      const windowHeight = window.innerHeight;
+
+      boxes.forEach(box => {
+        const boxTop = box.getBoundingClientRect().top;
+        const boxBottom = box.getBoundingClientRect().bottom;
+
+        // Si el elemento está dentro de la ventana visible
+        if (boxTop < windowHeight && boxBottom > 0) {
+          box.classList.add("visible");
+          const cards = box.querySelectorAll(".project-card");
+          cards.forEach((card, index) => {
+            setTimeout(() => {
+              card.classList.add("visible");
+            }, index * 200);
+          });
+        } else {
+          box.classList.remove("visible");
+          const cards = box.querySelectorAll(".project-card");
+          cards.forEach(card => card.classList.remove("visible"));
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", showOnScroll);
+    document.addEventListener("scroll", showOnScroll);
+  </script>
+</body>
+</html>
